@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: njb5kwzia-python-gitops
+  description: This is GitOps manifest for njb5kwzia-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=njb5kwzia-python
+    backstage.io/kubernetes-id: njb5kwzia-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: njb5kwzia-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:njb5kwzia-python
